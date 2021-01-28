@@ -66,6 +66,8 @@ This app is a chat / ticket mangement system. The admin has the ability to chat 
 
 #### Wireframes
 
+#### Component Tree
+![Component Tree](./img/Component_Tree_TT.png)
 
 ### Server (Back End)
 
