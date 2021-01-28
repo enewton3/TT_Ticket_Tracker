@@ -55,11 +55,11 @@ This app is a chat / ticket mangement system. The admin has the ability to chat 
 ### Libraries and Dependencies
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
-|      React       | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
-|  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
+|      React       | JS library used to build responsive web interfaces|
+|   React Router   | navigational component library             |
+| React SemanticUI | beautiful responsive develeopment framework|
+|    Scaledrone    | a 3rd partyrealtime mesaging service       |
+
 
 
 ### Client (Front End)
