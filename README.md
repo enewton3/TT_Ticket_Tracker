@@ -58,10 +58,25 @@ This app is a chat / ticket mangement system. The admin has the ability to chat 
 |      React       | JS library used to build responsive web interfaces|
 |   React Router   | navigational component library             |
 | React SemanticUI | beautiful responsive develeopment framework|
-|    Scaledrone    | a 3rd partyrealtime mesaging service       |
+|    Scaledrone    | a 3rd party realtime mesaging service       |
 
 
 
 ### Client (Front End)
 
 #### Wireframes
+
+
+### Server (Back End)
+
+#### ERD Model
+![ERD Model](./img/ERD_TT.png)
+
+<br>
+
+***
+
+## Post-MVP
+- To be able to sort tickets by status
+- Create a hook for the handle change
+- Have multiple user types
