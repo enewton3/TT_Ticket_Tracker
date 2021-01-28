@@ -67,8 +67,8 @@ This app is a chat / ticket mangement system. The admin has the ability to chat 
 #### Wireframes
 ![Landing View](./img/Landing_TT.png)
 ![Login View](./img/Login_TT.png)
-![Register View](./img/Login_TT.png)
-![Tickets View](./img/TicketsAll_TT.png)
+![Register View](./img/Register_TT.png)
+![Tickets View](./img/Tickets_TT.png)
 
 #### Component Tree
 ![Component Tree](./img/Component_Tree_TT.png)
