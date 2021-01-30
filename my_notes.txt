@@ -1,0 +1,7 @@
+need vim styler
+routes vs controllers
+has_many and belongs_to associations in models (active record associations)
+ruby formatter in VS code
+take another look at schema (particularly that last migration)
+best way to seed a file? - see two method types
+    -is this to help leverage Active Record?
