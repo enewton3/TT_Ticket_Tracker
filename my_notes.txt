@@ -1,11 +1,8 @@
 need vim styler
-routes vs controllers
+routes vs controllers -- need some conceptual review
 has_many and belongs_to associations in models (active record associations)
-ruby formatter in VS code
 take another look at schema (particularly that last migration)
 best way to seed a file? - see two method types
     -is this to help leverage Active Record?
 Additionally we do not have an endpoint in our routes for this either.
     --need more info
-'encode' method is in the ApplicationController and 
-    yet it's used in the AuthenticationController -- method scope?
