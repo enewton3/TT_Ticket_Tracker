@@ -5,7 +5,7 @@ export default function Header(props) {
   const { currentUser, handleLogout } = props;
   return (
     <header>
-      <h1><Link to='/'>School App</Link></h1>
+      <h1><Link to='/'>TT App</Link></h1>
       <div>
         {currentUser
           ?
