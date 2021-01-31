@@ -1,22 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import './Header.css'
 
 export default function Header(props) {
   const { currentUser, handleLogout } = props;
   return (
-    <header>
-      <h1><Link to='/'>TT App</Link></h1>
-      <div>
-        {currentUser
-          ?
+    <div className='headerContainer'>
+      <img src="https://i.imgur.com/b4gQGaM.png" alt="tt_logo"/>
+      {currentUser ? (
           <>
             <p>{currentUser.username}</p>
-            <button onClick={handleLogout}>logout</button>
+            <button onClick={handleLogout}>Logout</button>
           </>
-          :
-          <Link to='/login'><button>Login/register</button></Link>
-        }
-      </div>
-    </header>
+        ) : (
+          <div className='login-register'><Link to='/login'>Login / Register</Link></div>
+        )}
+    </div>
   )
 }
