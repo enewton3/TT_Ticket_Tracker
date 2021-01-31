@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Candal&display=swap');
+
+.headerContainer{
+    display: flex;
+    flex-direction: row wrap;
+    width: 97vw;
+
+    border-style: solid;
+    border-width: thin;
+}
+.login-register{
+    font-family: 'Candal', sans-serif;
+    border-style: solid;
+    border-width: thin;
+    color: black;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+
