@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 export default function Login(props) {
   const [formData, setFormData] = useState({
@@ -44,7 +45,7 @@ export default function Login(props) {
           />
         </label>
         <hr />
-        <button>Login</button>
+        <Button variant="contained" color="primary">Login</Button>
         <Link to="/register">Register</Link>
       </form>
     </div>
