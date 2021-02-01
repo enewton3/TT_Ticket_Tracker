@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import Button from '@material-ui/core/Button';
 import './Header.css'
 
 export default function Header(props) {
@@ -7,13 +8,13 @@ export default function Header(props) {
   return (
     <div className='headerContainer'>
       <div className='logo'>
-        <img src="https://i.imgur.com/b4gQGaM.png" alt="tt_logo"/>
+        <Link to='/home'><img src="https://i.imgur.com/FoWAAmg.png" alt="tt_logo"/></Link>
       </div>
       <div className='right-nav'>
         {currentUser ? (
             <>
-              <p>{currentUser.username}</p>
-              <button onClick={handleLogout}>Logout</button>
+              <p>Welcome {currentUser.username}!</p>
+              <Button variant="contained" color="primary" type='submit' onClick={handleLogout}>Logout</Button>
             </>
           ) : (
             <Link to='/login'>LOGIN / REGISTER</Link>

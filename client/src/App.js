@@ -5,10 +5,11 @@ import Layout from './layouts/Layout';
 import { loginUser, registerUser, verifyUser, removeToken } from './services/auth';
 import Login from './screens/Login/Login';
 import Register from './screens/Register/Register';
+import LandingPage from './screens/LandingPage/LandingPage';
+import Tickets from './screens/Tickets/Tickets';
+import ChatContainer from "./containers/ChatContainer/ChatContainer";
 
 
-
-// import TeachersContainer from './containers/TeachersContainer/TeachersContainer';
 
 
 
@@ -56,9 +57,15 @@ function App() {
           <Route path='/register'>
             <Register handleRegister={handleRegister} />
           </Route>
-          {/* <Route path='/'>
-            <TeachersContainer currentUser={currentUser} />
-          </Route> */}
+          <Route path='/home'>
+            <LandingPage />
+          </Route>
+          <Route path='/chat'>
+            <ChatContainer />
+          </Route>
+          <Route path='/'>
+            <Tickets />
+          </Route>
         </Switch>
       </Layout>
     </div>

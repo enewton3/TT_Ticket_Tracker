@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import Button from '@material-ui/core/Button';
+import TextField from "@material-ui/core/TextField";
+// import './Register.css'
 
 export default function Register(props) {
   const [formData, setFormData] = useState({
@@ -19,41 +22,35 @@ export default function Register(props) {
 
   return (
     <div className="auth-container">
-      <h2>Register</h2>
+      {/* <h2>Register</h2> */}
       <hr />
       <form onSubmit={(e) => {
         e.preventDefault();
         handleRegister(formData);
       }} >
-        <label>
-          Username:
-        <input
+        <TextField
             name="username"
-            type="text"
+            label='Username'
             value={username}
             onChange={handleChange}
+            variant='outlined'
           />
-        </label>
-        <label>
-          Email:
-        <input
+        <TextField
             name="email"
-            type="text"
+            label='Email'
             value={email}
             onChange={handleChange}
+            variant='outlined'
           />
-        </label>
-        <label>
-          Password:
-        <input
-            name="password"
-            type="password"
-            value={password}
-            onChange={handleChange}
-          />
-        </label>
+        <TextField
+          name='password'
+          label='Password'
+          value={password}
+          onChange={handleChange}
+          variant='outlined'
+        />
         <hr />
-        <button>Register</button>
+        <Button variant="contained" color="primary" type='submit'>Register</Button>
       </form>
     </div>
   )

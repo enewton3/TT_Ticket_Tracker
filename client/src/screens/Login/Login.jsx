@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
+import TextField from "@material-ui/core/TextField";
+import './Login.css'
 
 export default function Login(props) {
   const [formData, setFormData] = useState({
@@ -19,34 +21,30 @@ export default function Login(props) {
   }
 
   return (
-    <div className="auth-container" >
-      <h2>login</h2>
+    <div className='auth-container' >
       <hr />
+      {/* <h2>Login</h2> */}
       <form onSubmit={(e) => {
         e.preventDefault();
         handleLogin(formData);
       }} >
-        <label>
-          Username:
-            <input
-            name="username"
-            type="text"
-            value={username}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Password:
-            <input
-            name="password"
-            type="password"
-            value={password}
-            onChange={handleChange}
-          />
-        </label>
-        <hr />
-        <Button variant="contained" color="primary">Login</Button>
-        <Link to="/register">Register</Link>
+        <TextField
+          name='username'
+          label='Username'
+          value={username}
+          onChange={handleChange}
+          variant='outlined'
+        />
+        <TextField
+          name='password'
+          label='Password'
+          value={password}
+          onChange={handleChange}
+          variant='outlined'
+        />
+        <br/>
+        <Button variant="contained" color="primary" type='submit' id='button'>Login</Button>
+        <Link to="/register" id='register-link'>Register</Link>
       </form>
     </div>
   )

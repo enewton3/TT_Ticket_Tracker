@@ -1,0 +1,15 @@
+a{
+    font-family: 'Hind Siliguri', sans-serif;
+    margin-left: 20px;
+    display: inline-block;
+}
+a:hover{
+    text-decoration: underline;  
+}
+h2{
+    font-family: 'Hind Siliguri', sans-serif;
+}
+Button{
+    margin-top: 60px;
+}
+
