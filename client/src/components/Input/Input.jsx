@@ -1,4 +1,5 @@
 import { useState } from "react";
+import '../../containers/ChatContainer/ChatContainer.css'
 
 export default function Input(props){
 

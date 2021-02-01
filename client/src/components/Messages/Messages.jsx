@@ -1,4 +1,5 @@
 import React from "react";
+import '../../containers/ChatContainer/ChatContainer.css'
 
 export default function Messages(props){
 
