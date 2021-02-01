@@ -1,5 +1,12 @@
-#animal-snow-tracks{
-    max-width: 100%;
-    text-align: center; 
+.animal-tracks{
+    width: 90vw;
+    object-fit: cover;
+    height: 250px;
+    margin-top: 15px;
     border-style: solid;
+    opacity: .8;
+}
+
+.homeIMG{
+    margin:0;
 }

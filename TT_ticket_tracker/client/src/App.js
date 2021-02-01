@@ -61,7 +61,7 @@ function App() {
             <LandingPage />
           </Route>
           <Route path='/chat'>
-            <ChatContainer currentUser={currentUser} setCurrentUser={setCurrentUser} />
+            <ChatContainer currentUser={currentUser} />
           </Route>
           <Route path='/'>
             <Tickets />
