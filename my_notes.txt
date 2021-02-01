@@ -1,0 +1,33 @@
+# ------------------------------------------------------ PORT ISSUE (404 error)
+api-config harcoded port 3000 on client-side, but rails s kept kicking it off the port....why?
+    - I went ahead and harcoded it to port 3001 instead.... but not sure why this happens
+Answer: need to always run the backend before the frontend. Backend is hardcoded to port 3000,
+React will ask to change its port location from 300 to 3001
+client: port set in api-config.js
+server: port set in puma.rb
+
+# ------------------------------------------------------ CORS ISSUE
+Need to uncomment cors in Gemfile && ./config/initializer/cors.rb uncomment methos and set origin to '*'
+
+# ------------------------------------------------------ ENGINEERING ORDER ISSUE (500 error)
+Need to build the registration before the login so passwords are properly hashed with bcrypt.
+Can't seed with users, because of this.
+
+
+
+
+
+
+
+
+
+
+# ------------------------------------------------------
+need vim styler
+routes vs controllers -- need some conceptual review
+has_many and belongs_to associations in models (active record associations)
+take another look at schema (particularly that last migration)
+best way to seed a file? - see two method types
+    -is this to help leverage Active Record?
+Additionally we do not have an endpoint in our routes for this either.
+    --need more info
