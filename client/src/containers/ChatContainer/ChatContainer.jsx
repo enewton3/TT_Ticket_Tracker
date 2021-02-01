@@ -2,48 +2,33 @@ import { useState } from "react";
 import Messages from '../../components/Messages/Messages'
 import Input from '../../components/Input/Input'
 
-export default function ChatContainer() {
+export default function ChatContainer(props) {
 
-    // This will instantiate a new instance of Scaledrone
-    drone = new window.Scaledrone("tt-app", {
+    const [messages, setMessages] = useState([{
+        text: "This is a test message!",
+        member: {
+            color: "blue",
+            username: "bluemoon"
+        } 
+    }])
 
-        data: this.state.member
-  
-        drone.on('open', error => {
-          if (error) {
-            return console.error(error);
-          }
-          const member = {...this.state.member};
-          member.id = drone.clientId;
-          this.setState({member});
-        });
+    function randomColor() {
+        return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
     }
 
-
-
-
-
-
-    const [messages, setMessages] = useState({
-        message  : 'testing chat',
-    });
-
     const onSendMessage = (text) => {
-        const messages = this.state.messages
-        messages.push({
-            text: messages,
-            // member: this.state.member
+        const thread = [...messages]
+        thread.push({
+            text: text,
+            member: props.currentUser
         })
-        setMessages({messages: messages})
+        setMessages(thread)
     }
 
     return(
         <>
-            <Messages messages={messages}/>
+            <Messages messages={messages} currentMember={props.currentUser} />
             <Input onSendMessage={onSendMessage} />
         </>
     )
 }
-
-
-// messages as an array state
