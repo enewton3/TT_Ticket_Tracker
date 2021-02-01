@@ -3,6 +3,8 @@ import Messages from '../../components/Messages/Messages'
 import Input from '../../components/Input/Input'
 import './ChatContainer.css'
 
+
+
 export default function ChatContainer(props) {
 
 
@@ -31,19 +33,26 @@ export default function ChatContainer(props) {
     drone.on('open', error => {
         if (error) {
             return console.error(error);
-    }
+        }
 
-    const newMember = {...member.username}
-    newMember.id = drone.clientId
-    setMember(newMember)
+        const newMember = {...member.username}
+        newMember.id = drone.clientId
+        setMember(newMember)
+    });
 
 
 
     /////////// ------------------------------------ Connect to a Room
     const room = drone.subscribe("observable-room");
+    
+
+
+    /////////// ------------------------------------ Tracks when messages arrive
+    room.on('data', (data, member) => {
+        const newMessages = [...messages];
+        newMessages.push({member, text: data});
+        setMessages(newMessages);
     });
-
-
 
 
 
@@ -57,14 +66,27 @@ export default function ChatContainer(props) {
         return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
     }
 
-    const onSendMessage = (text) => {
-        const thread = [...messages]
-        thread.push({
-            text: text,
-            member: props.currentUser
-        })
-        setMessages(thread)
+    // const onSendMessage = (text) => {
+    //     const thread = [...messages]
+    //     thread.push({
+    //         text: text,
+    //         member: props.currentUser
+    //     })
+    //     setMessages(thread)
+    // }
+
+    const onSendMessage = (message) => {
+        drone.publish({
+        room: "observable-room",
+        message: message
+        });
     }
+
+
+
+
+
+
 
     return(
         <>
