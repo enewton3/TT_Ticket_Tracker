@@ -5,34 +5,53 @@ import './ChatContainer.css'
 
 export default function ChatContainer(props) {
 
+
+
+    /////////// ------------------------------------ Setting States
+    const [messages, setMessages] = useState([{
+        text: "This is a test message!",
+        member: {
+            color: 'blue',
+            username: 'bluemoon'
+        } 
+    }])
+
+    const [member, setMember] = useState({
+        color: randomColor(),
+        username: props.currentUser,
+    })
+
+
+
     /////////// ------------------------------------ Creating New Scaledrone Instance
     const drone = new window.Scaledrone("T6DViaUTalCL0het", {
-        data: props.currentUser
+        data: member.username
     });
 
     drone.on('open', error => {
         if (error) {
             return console.error(error);
-        }
+    }
 
-        /////////// ----------------------------------These lines
-        const member = {...messages.member} // pulling member out of state
-        member.id = drone.clientId          // adding id to member?
-        setMessages({member})               // resetting state with new id?
+    const newMember = {...member.username}
+    newMember.id = drone.clientId
+    setMember(newMember)
+
+
+
+    /////////// ------------------------------------ Connect to a Room
+    const room = drone.subscribe("observable-room");
     });
 
 
 
 
 
-    /////////// ------------------------------------ Setting State
-    const [messages, setMessages] = useState([{
-        text: "This is a test message!",
-        member: {
-            color: randomColor(),
-            username: 'bluemoon'
-        } 
-    }])
+
+
+
+
+
 
     function randomColor() {
         return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
