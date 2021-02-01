@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function Input(props){
 
     const [text, setText] = useState({
-        text : '',
+        text:''
     })
 
     const handleChange = (e) => {
@@ -16,20 +16,20 @@ export default function Input(props){
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        props.onSendMessage(text);
-        setText({text: ''});
+        setText({text:''});
+        props.onSendMessage(text.text);
     }
-
 
     return (
         <div className="Input">
           <form onSubmit={handleSubmit}>
             <input
+              name='text'
               onChange={handleChange}
-              value={text}
+              value={text.text}
               type="text"
               placeholder="Enter your message and press ENTER"
-              autofocus="true"
+              autoFocus={true}
             />
             <button>Send</button>
           </form>
