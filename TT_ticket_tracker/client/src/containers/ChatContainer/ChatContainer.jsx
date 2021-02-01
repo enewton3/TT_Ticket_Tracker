@@ -4,10 +4,29 @@ import Input from '../../components/Input/Input'
 
 export default function ChatContainer() {
 
+    // This will instantiate a new instance of Scaledrone
+    drone = new window.Scaledrone("tt-app", {
+
+        data: this.state.member
+  
+        drone.on('open', error => {
+          if (error) {
+            return console.error(error);
+          }
+          const member = {...this.state.member};
+          member.id = drone.clientId;
+          this.setState({member});
+        });
+    }
+
+
+
+
+
+
     const [messages, setMessages] = useState({
         message  : 'testing chat',
     });
-
 
     const onSendMessage = (text) => {
         const messages = this.state.messages
@@ -17,7 +36,6 @@ export default function ChatContainer() {
         })
         setMessages({messages: messages})
     }
-
 
     return(
         <>
