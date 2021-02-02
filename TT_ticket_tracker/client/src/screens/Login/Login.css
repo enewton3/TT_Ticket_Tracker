@@ -18,3 +18,10 @@ Button{
     align-items: center;
     margin-top: 50px;
 }
+
+.auth-container{
+    /* display:flex;
+    flex-flow: wrap;
+    justify-content: center; */
+}
+
