@@ -23,12 +23,28 @@ export default function ChatContainer(props) {
         username: props.currentUser,
     })
 
+    const [drone, setDrone] = useState(
+        new window.Scaledrone("T6DViaUTalCL0het", {
+            data: member.username
+        })
+    )
 
 
+    
     /////////// ------------------------------------ Creating New Scaledrone Instance
-    const drone = new window.Scaledrone("T6DViaUTalCL0het", {
-        data: member.username
-    });
+    // const drone = new window.Scaledrone("T6DViaUTalCL0het", {
+    //     data: member.username
+    // });
+
+    drone.on('error', error => {
+        console.error('Error with connection:', error);
+      });
+      drone.on('close', event => {
+        console.log('Connection closed:', event);
+      });
+
+
+
 
     drone.on('open', error => {
         if (error) {
@@ -44,13 +60,21 @@ export default function ChatContainer(props) {
 
     /////////// ------------------------------------ Connect to a Room
     const room = drone.subscribe("observable-room");
+    console.log(room)
     
 
 
     /////////// ------------------------------------ Tracks when messages arrive
     room.on('data', (data, member) => {
+        console.log(data)
         const newMessages = [...messages];
-        newMessages.push({member, text: data});
+        newMessages.push({
+            member: {
+                username:props.currentUser.username,
+                color: 'red'
+            },
+            text: data});
+            console.log(newMessages)
         setMessages(newMessages);
     });
 

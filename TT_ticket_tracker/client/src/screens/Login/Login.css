@@ -22,3 +22,5 @@ Button{
     flex-flow: wrap;
     justify-content: center; */
 }
+
+heroku config:set RAILS_MASTER_KEY=55acc7e5d90c3dc3574179fcd20103df
