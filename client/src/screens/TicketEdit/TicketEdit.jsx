@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { getTicket } from "../../services/Tickets";
+import { Link, useHistory, useParams } from "react-router-dom";
+import { getTicket, updateTicket } from "../../services/Tickets";
 import "./TicketEdit.css";
 
 export default function TicketDetail(props) {

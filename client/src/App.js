@@ -9,6 +9,7 @@ import LandingPage from './screens/LandingPage/LandingPage';
 import Tickets from './screens/Tickets/Tickets';
 import ChatContainer from "./containers/ChatContainer/ChatContainer";
 import TicketDetail from "./screens/TicketDetail/TicketDetail";
+import TicketEdit from "./screens/TicketEdit/TicketEdit";
 
 
 
@@ -65,11 +66,14 @@ function App() {
           <Route path='/chat'>
             <ChatContainer currentUser={currentUser} />
           </Route>
+          <Route path="/tickets/:id">
+            <TicketDetail currentUser={currentUser} />
+          </Route>
+          <Route path="/tickets/edit">
+            <TicketEdit currentUser={currentUser} />
+          </Route>
           <Route path='/tickets'>
             <Tickets currentUser={currentUser} />
-          </Route>
-          <Route path="/ticket/:id">
-            <TicketDetail currentUser={currentUser} />
           </Route>
         </Switch>
       </Layout>
