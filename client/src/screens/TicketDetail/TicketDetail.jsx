@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import { getTicket, deleteTicket } from "../../services/Tickets";
 import { Button } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -54,6 +54,8 @@ export default function TicketDetail(props) {
               >
                 Delete
               </Button>
-        </div>
+            </div>
+        ): null }
+    </div>
     )
 }
