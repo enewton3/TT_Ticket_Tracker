@@ -66,10 +66,10 @@ function App() {
             <ChatContainer currentUser={currentUser} />
           </Route>
           <Route path='/tickets'>
-            <Tickets />
+            <Tickets currentUser={currentUser} />
           </Route>
           <Route path="/ticket/:id">
-            <TicketDetail />
+            <TicketDetail currentUser={currentUser} />
           </Route>
         </Switch>
       </Layout>
