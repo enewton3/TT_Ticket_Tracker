@@ -15,10 +15,6 @@ Button{
 .nested-login{
     display: flex;
     flex-direction: column;
-}
-
-.auth-container{
-    /* display:flex;
-    flex-flow: wrap;
-    justify-content: center; */
+    align-items: center;
+    margin-top: 50px;
 }

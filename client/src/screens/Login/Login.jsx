@@ -44,7 +44,7 @@ export default function Login(props) {
           />
           <br/>
           <Button variant="contained" color="primary" type='submit' id='button'>Login</Button>
-          <Link to="/register" id='register-link'>Register</Link>
+          <Link to="/register" id='register-link'>REGISTER</Link>
         </div>
       </form>
     </div>

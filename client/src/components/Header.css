@@ -22,4 +22,7 @@ a{
     text-decoration: none;
     margin-right: 20px;
 }
-
+.inner-nav{
+    /* display: flex;
+    flex-direction: row; */
+}

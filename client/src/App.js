@@ -1,13 +1,14 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import { useHistory, Switch, Route } from 'react-router-dom';
-import Layout from './layouts/Layout';
+import Layout from './layouts/layout';
 import { loginUser, registerUser, verifyUser, removeToken } from './services/auth';
 import Login from './screens/Login/Login';
 import Register from './screens/Register/Register';
 import LandingPage from './screens/LandingPage/LandingPage';
 import Tickets from './screens/Tickets/Tickets';
 import ChatContainer from "./containers/ChatContainer/ChatContainer";
+import TicketDetail from "./screens/TicketDetail/TicketDetail";
 
 
 
@@ -28,19 +29,20 @@ function App() {
   const handleLogin = async (formData) => {
     const currentUser = await loginUser(formData);
     setCurrentUser(currentUser);
-    history.push('/')
+    history.push('/tickets')
   }
 
   const handleRegister = async (formData) => {
     const currentUser = await registerUser(formData);
     setCurrentUser(currentUser);
-    history.push('/')
+    history.push('/login')
   }
 
   const handleLogout = () => {
     localStorage.removeItem("authToken");
     removeToken();
     setCurrentUser(null);
+    history.push('/home')
   }
 
 
@@ -63,8 +65,11 @@ function App() {
           <Route path='/chat'>
             <ChatContainer currentUser={currentUser} />
           </Route>
-          <Route path='/'>
+          <Route path='/tickets'>
             <Tickets />
+          </Route>
+          <Route path="/ticket/:id">
+            <TicketDetail />
           </Route>
         </Switch>
       </Layout>
