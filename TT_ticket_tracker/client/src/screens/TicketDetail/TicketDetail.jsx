@@ -14,7 +14,6 @@ export default function TicketDetail(props) {
   useEffect(() => {
     const fetchTicket = async () => {
       const ticket = await getTicket(id);
-      console.log('here')
       setTicket(ticket);
       setLoaded(true);
     };
