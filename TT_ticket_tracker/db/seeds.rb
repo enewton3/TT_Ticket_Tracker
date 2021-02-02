@@ -1,6 +1,8 @@
 # Destroy! -----------------------
 
+Ticket.destroy_all
 User.destroy_all
+
 
 
 
