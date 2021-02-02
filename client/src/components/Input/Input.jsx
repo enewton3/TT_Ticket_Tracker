@@ -23,7 +23,7 @@ export default function Input(props){
 
     return (
         <div className="Input">
-          <form onSubmit={handleSubmit}>
+          <form className="input-form" onSubmit={handleSubmit}>
             <input
               name='text'
               onChange={handleChange}
