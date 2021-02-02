@@ -18,10 +18,6 @@ Can't seed with users, because of this.
 
 
 
-
-
-
-
 # ------------------------------------------------------
 need vim styler
 routes vs controllers -- need some conceptual review
@@ -31,3 +27,7 @@ best way to seed a file? - see two method types
     -is this to help leverage Active Record?
 Additionally we do not have an endpoint in our routes for this either.
     --need more info
+
+
+# ------------------------------------------------------
+registration isn't working
