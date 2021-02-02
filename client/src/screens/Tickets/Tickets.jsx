@@ -36,7 +36,7 @@ export default function Tickets(props) {
 
     return( 
         <div style={{ height: 400, width: '100%' }}>
-            <DataGrid rows={ROWS} columns={columns} pageSize={5} checkboxSelection />
+            <DataGrid rows={ROWS} columns={columns} pageSize={5} />
         </div>
     )
 }
