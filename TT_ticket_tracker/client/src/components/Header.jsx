@@ -13,8 +13,12 @@ export default function Header(props) {
       <div className='right-nav'>
         {currentUser ? (
             <>
-              <p>Welcome {currentUser.username}!</p>
-              <Button variant="contained" color="primary" type='submit' onClick={handleLogout}>Logout</Button>
+              <div className='inner-nav>'>
+                <p>Welcome {currentUser.username}!</p>
+                <Link to='/tickets'>Tickets</Link>
+                <Link to='/chat'>Chat</Link>
+                <Button variant="contained" color="primary" type='submit' onClick={handleLogout}>Logout</Button>
+              </div>
             </>
           ) : (
             <Link to='/login'>LOGIN / REGISTER</Link>
