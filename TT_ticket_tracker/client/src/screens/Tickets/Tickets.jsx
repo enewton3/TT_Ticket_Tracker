@@ -28,18 +28,13 @@ export default function Tickets(props) {
 
 
     // --------------------------- Inserting data into table
-    const ROWS = tickets.map((ticket, index) =>
-        `{ id: ${ticket.id}, title: ${ticket.title}, description: ${ticket.description}, status: ${ticket.status} }`
-    );
+    const ROWS = tickets.map((ticket, index) =>{
+        return { id: ticket.id, title: ticket.title, description: ticket.description, status: ticket.status }
+    });
 
-    console.log(ROWS)
 
 
     return( 
-
-        // <></>
-
-
         <div style={{ height: 400, width: '100%' }}>
             <DataGrid rows={ROWS} columns={columns} pageSize={5} checkboxSelection />
         </div>
