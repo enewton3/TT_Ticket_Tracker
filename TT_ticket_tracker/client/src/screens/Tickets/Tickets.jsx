@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { DataGrid } from '@material-ui/data-grid';
+import { useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getTickets } from "../../services/Tickets";
-
 
 export default function Tickets(props) {
 
     const [tickets, setTickets] = useState([]);
+    const history = useHistory();
 
     useEffect(() => {
         const ticketsResponse = async () => {
@@ -16,8 +17,12 @@ export default function Tickets(props) {
         ticketsResponse();
     }, []);
 
+    const handleClick = (e) => {
+        history.push(`/ticket/${e.row.id}`)
+    }
+    
 
-
+    
     // --------------------------- Setting up table with Material UI
     const columns = [
         { field: 'title', headerName: 'Title', width: 300 },
@@ -36,7 +41,13 @@ export default function Tickets(props) {
 
     return( 
         <div style={{ height: 400, width: '100%' }}>
-            <DataGrid rows={ROWS} columns={columns} pageSize={5} />
+            <DataGrid 
+                hover
+                onRowClick={handleClick}
+                rows={ROWS}
+                columns={columns}
+                pageSize={5}
+            />
         </div>
     )
 }
