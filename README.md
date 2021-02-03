@@ -1,6 +1,10 @@
 # TT_Ticket_Tracker
 
 ## Overview
+
+[Current Deploy](https://601aa0d46dd2fc00089a2496--tt-chat-ticket-tracker.netlify.app/)
+Need more styling, but functionality is working.
+
 [TT Ticket Tracker](https://github.com/jeri-dilts/TT_Ticket_Tracker) is a full-stack application built with ReactJS and a Ruby on Rails server. A JWT authentication system is built into the design for an added layer of complexity.
 
 This app is a chat / ticket mangement system. The admin has the ability to chat with someone about an issue using a 3rd party platform Scaledrone, a realtime mesaging service. If the problem is unresolved or if the admin would like to keep the ticket for their records, the chat can be saved. This saving process will require a title and description of the issue and given a status (open || closed). The admin will have view where they can see all tickets. If they click a ticket they can see the chat thread, title, description, and status. They will also be able to edit and update the description, title, and status || delete ticket entirely.
