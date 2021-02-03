@@ -3,6 +3,10 @@
     object-fit: cover;
     height: 250px;
     margin-top: 15px;
-    border-style: solid;
     opacity: .8;
+    -webkit-border-top-left-radius: 1em;
+    -webkit-border-top-right-radius: 1em;
+    -webkit-border-bottom-right-radius: 1em;
+    -webkit-border-bottom-left-radius: 1em;
 }
+

@@ -114,29 +114,32 @@ export default function ChatContainer(props) {
         <>
             <Messages messages={messages} currentUser={props.currentUser} currentMember={member}/>
             <Input onSendMessage={onSendMessage} />
-            <form onSubmit={handleSubmit}>
-                <TextField
-                    required
-                    onChange={handleChange}
-                    name="title"
-                    value={title}   
-                    className="textfield"
-                    label="Title"
-                    variant="outlined"
-                    type="text"
-                />
-                <TextField
-                    required
-                    onChange={handleChange}
-                    name="description"
-                    value={description}
-                    className="textfield"
-                    label="Description"
-                    variant="outlined"
-                    type="text"
-                />
-                <Button variant="contained" color="primary" type='submit' id='button'>Save</Button>
-            </form>
+
+            <div className='chat-form'>
+                <form onSubmit={handleSubmit}>
+                    <TextField
+                        required
+                        onChange={handleChange}
+                        name="title"
+                        value={title}   
+                        className="textfield"
+                        label="Title"
+                        variant="outlined"
+                        type="text"
+                    />
+                    <TextField
+                        required
+                        onChange={handleChange}
+                        name="description"
+                        value={description}
+                        className="textfield"
+                        label="Description"
+                        variant="outlined"
+                        type="text"
+                    />
+                    <Button variant="contained" color="primary" type='submit' id='button'>Save</Button>
+                </form>
+            </div>
         </>
     )
 }

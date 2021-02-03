@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Button from '@material-ui/core/Button';
 import TextField from "@material-ui/core/TextField";
-// import './Register.css'
+import './Register.css'
 
 export default function Register(props) {
   const [formData, setFormData] = useState({
@@ -21,12 +21,12 @@ export default function Register(props) {
   }
 
   return (
-    <div className="auth-container">
-      <hr />
+    <>
       <form onSubmit={(e) => {
         e.preventDefault();
         handleRegister(formData);
       }} >
+        <div className='register-form'>
         <TextField
             name="username"
             label='Username'
@@ -49,9 +49,9 @@ export default function Register(props) {
           variant='outlined'
           type='password'
         />
-        <hr />
-        <Button variant="contained" color="primary" type='submit'>Register</Button>
+        <Button className="register-button" variant="contained" color="primary" type='submit'>Register</Button>
+        </div>
       </form>
-    </div>
+    </>
   )
 }

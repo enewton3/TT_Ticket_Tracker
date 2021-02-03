@@ -43,7 +43,7 @@ function App() {
     localStorage.removeItem("authToken");
     removeToken();
     setCurrentUser(null);
-    history.push('/home')
+    history.push('/')
   }
 
 
@@ -60,9 +60,6 @@ function App() {
           <Route path='/register'>
             <Register handleRegister={handleRegister} />
           </Route>
-          <Route path='/home'>
-            <LandingPage />
-          </Route>
           <Route path='/chat'>
             <ChatContainer currentUser={currentUser} />
           </Route>
@@ -74,6 +71,9 @@ function App() {
           </Route>
           <Route path='/tickets'>
             <Tickets currentUser={currentUser} />
+          </Route>
+          <Route path='/'>
+            <LandingPage />
           </Route>
         </Switch>
       </Layout>

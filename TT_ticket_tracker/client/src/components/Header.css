@@ -3,23 +3,24 @@
     justify-content: space-between;
     width: 97vw;
 }
-.logo{
-    /* border-style: solid;
-    border-width: thin; */
-}
 .right-nav{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     margin-right: 20px;
     font-family: 'Hind Siliguri', sans-serif;
-    color: black;
-    /* border-style: solid;
-    border-width: thin; */
 }
 a{
     color: black;
     text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+.tickets-link{
+    margin-right: 20px;
+}
+.chat-link{
     margin-right: 20px;
 }
 .inner-nav{
