@@ -21,12 +21,12 @@ export default function Login(props) {
   }
 
   return (
-    <div className='auth-container' >
+    <>
       <form onSubmit={(e) => {
         e.preventDefault();
         handleLogin(formData);
       }} >
-        <div className='nested-login'>
+        <div className='login-form'>
           <TextField
             name='username'
             label='Username'
@@ -43,10 +43,10 @@ export default function Login(props) {
             type='password'
           />
           <br/>
-          <Button variant="contained" color="primary" type='submit' id='button'>Login</Button>
-          <Link to="/register" id='register-link'>REGISTER</Link>
+          <Button className="login-button" variant="contained" color="primary" type='submit' id='button'>Login</Button>
+          <Link className="register-link" to="/register" id='register-link'>REGISTER</Link>
         </div>
       </form>
-    </div>
+    </>
   )
 }

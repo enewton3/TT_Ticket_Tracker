@@ -3,6 +3,7 @@ import { DataGrid } from '@material-ui/data-grid';
 import { useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getTickets } from "../../services/Tickets";
+import './Tickets.css'
 
 export default function Tickets(props) {
 

@@ -25,16 +25,17 @@ export default function TicketDetail(props) {
   }
   const onTicketDelete = (e) => {
     e.preventDefault();
+    // deleteMessage(id) ----delete message here
     deleteTicket(id).then(() => history.push("/tickets"));
   };
 
   return (
     <div className="ticket-detail-div">
       <div className="ticket-info">
-        <div className="ticket-id">{id}</div>
-        <div className="ticket-title">{ticket.title}</div>
-        <div className="ticket-description">{ticket.description}</div>
-        <div className="ticket-status">{ticket.status}</div>
+        <div className="ticket-id">Ticket ID #: {id}</div>
+        <div className="ticket-title">Title: {ticket.title}</div>
+        <div className="ticket-description">Description: {ticket.description}</div>
+        <div className="ticket-status">Status:{ticket.status}</div>
       </div>
 
       {props.currentUser ? (
