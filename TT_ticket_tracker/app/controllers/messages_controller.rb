@@ -16,6 +16,7 @@ class MessagesController < ApplicationController
   # POST /messages
   def create
     @message = Message.new(message_params)
+    @message.ticket = Ticket.find(params[:ticket_id])
 
     if @message.save
       render json: @message, status: :created, location: @message
@@ -46,6 +47,6 @@ class MessagesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def message_params
-      params.require(:message).permit(:data, :id, :timestamp, :clientID, :tickets_id)
+      params.require(:message).permit(:data, :id, :timestamp, :clientID, :ticket_id)
     end
 end

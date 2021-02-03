@@ -25,6 +25,7 @@ export default function TicketDetail(props) {
   }
   const onTicketDelete = (e) => {
     e.preventDefault();
+    // deleteMessage(id) ----delete message here
     deleteTicket(id).then(() => history.push("/tickets"));
   };
 

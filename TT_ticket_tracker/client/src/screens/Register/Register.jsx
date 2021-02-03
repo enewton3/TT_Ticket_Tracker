@@ -22,7 +22,6 @@ export default function Register(props) {
 
   return (
     <div className="auth-container">
-      {/* <h2>Register</h2> */}
       <hr />
       <form onSubmit={(e) => {
         e.preventDefault();
@@ -48,6 +47,7 @@ export default function Register(props) {
           value={password}
           onChange={handleChange}
           variant='outlined'
+          type='password'
         />
         <hr />
         <Button variant="contained" color="primary" type='submit'>Register</Button>
